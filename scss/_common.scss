@@ -12,7 +12,7 @@
 [class*="__container"] {
    max-width: toRem(1230);
    margin: 0 auto;
-   padding: 0 toRem(15);
+   padding-inline: toRem(15);
 }
 
 body {
