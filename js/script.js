@@ -8,49 +8,51 @@
 //    document.addEventListener("click", documentActions);
 // }
 
-// function documentActions(e) {
-// const targetElement = e.target; // Елемент на який клікнули
-// const bodyEl = document.body;
+/*
+function documentActions(e) {
+   const targetElement = e.target; // Елемент на який клікнули
+   const bodyEl = document.body;
 
-// Функціонал для іконки меню
-// if (targetElement.closest(".menu-icon")) {
-//    bodyEl.classList.toggle("menu-open");
-// }
+   // Функціонал для іконки меню
+   if (targetElement.closest(".menu-icon")) {
+      bodyEl.classList.toggle("menu-open");
+   }
 
-// Закриваємо мобільне меню при кліках на посилання
-// if (targetElement.closest(".menu__link") && bodyEl.classList.contains("menu-open")) {
-//    bodyEl.classList.remove("menu-open");
-// }
+   // Закриваємо мобільне меню при кліках на посилання
+   if (targetElement.closest(".menu__link") && bodyEl.classList.contains("menu-open")) {
+      bodyEl.classList.remove("menu-open");
+   }
 
-// Плавний перехід до секцій сторінки при кліках на навігацію
-// if (targetElement.hasAttribute("data-goto")) {
-//    e.preventDefault();
-//    const gotoElement = document.querySelector(`${targetElement.dataset.goto}`);
-//    const headerContainerEl = document.querySelector(".header__container");
-//    const headerContainerHeight = headerContainerEl ? headerContainerEl.offsetHeight : 0;
-//    if (gotoElement) {
-//       window.scrollTo({
-//          top: gotoElement.offsetTop - headerContainerHeight,
-//          behavior: "smooth",
-//       });
-//    }
-// }
+   // Плавний перехід до секцій сторінки при кліках на навігацію
+   if (targetElement.hasAttribute("data-goto")) {
+      e.preventDefault();
+      const gotoElement = document.querySelector(`${targetElement.dataset.goto}`);
+      const headerContainerEl = document.querySelector(".header__container");
+      const headerContainerHeight = headerContainerEl ? headerContainerEl.offsetHeight : 0;
+      if (gotoElement) {
+         window.scrollTo({
+            top: gotoElement.offsetTop - headerContainerHeight,
+            behavior: "smooth",
+         });
+      }
+   }
 
-//    // Функціонал спойлерів
-//    if (targetElement.closest("[data-spoller]")) {
-//       const currentElement = targetElement.closest("[data-spoller]");
-//       if (!currentElement.nextElementSibling.classList.contains("--sliding")) {
-//          currentElement.classList.toggle("active");
-//       }
-//       slideToggle(currentElement.nextElementSibling, 500)
-//    }
+   // Функціонал спойлерів
+   if (targetElement.closest("[data-spoller]")) {
+      const currentElement = targetElement.closest("[data-spoller]");
+      if (!currentElement.nextElementSibling.classList.contains("--sliding")) {
+         currentElement.classList.toggle("active");
+      }
+      slideToggle(currentElement.nextElementSibling, 500)
+   }
 
-//    // Функціонал табів
-//    if (targetElement.closest("[data-tabs-button]")) {
-//       const currentElement = targetElement.closest("[data-tabs-button]");
-//       setTab(currentElement);
-//    }
-// }
+   // Функціонал табів
+   if (targetElement.closest("[data-tabs-button]")) {
+      const currentElement = targetElement.closest("[data-tabs-button]");
+      setTab(currentElement);
+   }
+}
+*/
 
 // Щоб спойлери були закриті (Додати функціонал закривання по брейкпоінту)
 // const spollers = document.querySelectorAll("[data-spoller]");
