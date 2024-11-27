@@ -1,10 +1,40 @@
 "use strict";
 
-// Відслідковуємо кліки на усій сторінці
-// document.addEventListener("click", documentActions);
+// Чекаємо поки завантажиться сторінка та усі її ресурси
+// window.addEventListener("load", windowLoad);
+
+// function windowLoad() {
+//    Відслідковуємо кліки на усій сторінці
+//    document.addEventListener("click", documentActions);
+// }
 
 // function documentActions(e) {
-//    const targetElement = e.target;
+// const targetElement = e.target; // Елемент на який клікнули
+// const bodyEl = document.body;
+
+// Функціонал для іконки меню
+// if (targetElement.closest(".menu-icon")) {
+//    bodyEl.classList.toggle("menu-open");
+// }
+
+// Закриваємо мобільне меню при кліках на посилання
+// if (targetElement.closest(".menu__link") && bodyEl.classList.contains("menu-open")) {
+//    bodyEl.classList.remove("menu-open");
+// }
+
+// Плавний перехід до секцій сторінки при кліках на навігацію
+// if (targetElement.hasAttribute("data-goto")) {
+//    e.preventDefault();
+//    const gotoElement = document.querySelector(`${targetElement.dataset.goto}`);
+//    const headerContainerEl = document.querySelector(".header__container");
+//    const headerContainerHeight = headerContainerEl ? headerContainerEl.offsetHeight : 0;
+//    if (gotoElement) {
+//       window.scrollTo({
+//          top: gotoElement.offsetTop - headerContainerHeight,
+//          behavior: "smooth",
+//       });
+//    }
+// }
 
 //    // Функціонал спойлерів
 //    if (targetElement.closest("[data-spoller]")) {
@@ -221,28 +251,19 @@
 // ------------- END OF smooth UP scroll -------------
 
 
-// ------------- smooth scroll-to-section -------------
-// window.addEventListener("load", windowLoad)
+// -------------- Animations (IntersectionObserver) -------------------
 
-// function windowLoad() {
-//    document.addEventListener("click", documentActions)
+// const items = document.querySelectorAll("[data-watch]");
+// const options = {
+//    threshold: 0.2,
 // }
-
-// function documentActions(e) {
-//    const targetElement = e.target
-//    // scroll
-//    if (targetElement.hasAttribute("data-goto")) {
-//       const gotoElement = document.querySelector(`${targetElement.dataset.goto}`)
-//       const headerInner = document.querySelector(".header__inner")
-//       const headerInnerHeight = headerInner ? headerInner.offsetHeight : 0
-
-//       if (gotoElement) {
-//          window.scrollTo({
-//             top: gotoElement.offsetTop - headerInnerHeight,
-//             behavior: "smooth",
-//          })
-//       }
-//       e.preventDefault()
-//    }
+// const callback = (entries) => {
+//    entries.forEach(entry => {
+//       entry.isIntersecting ? entry.target.classList.add("active") : entry.target.classList.remove("active");
+//    });
 // }
-// ------------- END OF smooth scroll-to-section -------------
+// const observer = new IntersectionObserver(callback, options);
+
+// items.forEach(item => {
+//    observer.observe(item);
+// });
